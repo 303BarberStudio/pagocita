@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Confirmación de Cita</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -12,6 +13,7 @@
       margin: 0;
       padding: 20px;
     }
+
     .container {
       max-width: 480px;
       margin: auto;
@@ -19,21 +21,25 @@
       padding: 25px;
       border-radius: 12px;
     }
+
     h1 {
       text-align: center;
       color: #f5c16c;
-      margin-bottom: 10px;
     }
+
     p {
       line-height: 1.5;
       font-size: 15px;
     }
+
     .price {
       font-size: 22px;
       font-weight: bold;
       text-align: center;
       margin: 20px 0;
+      color: #f5c16c;
     }
+
     .btn {
       display: block;
       width: 100%;
@@ -45,91 +51,89 @@
       border-radius: 8px;
       font-weight: bold;
       margin-top: 15px;
-      cursor: pointer;
     }
-    .btn-whatsapp {
-      background: #25D366;
+
+    .btn-secondary {
+      background: #333;
       color: #fff;
+      border: 1px solid #555;
     }
-    .note {
-      font-size: 13px;
-      color: #ccc;
-      margin-top: 20px;
-    }
-    .qr-container {
-      display: none;
+
+    .qr {
       text-align: center;
-      margin-top: 20px;
+      margin-top: 15px;
     }
-    .qr-container img {
-      width: 220px;
-      border-radius: 10px;
-      margin-top: 10px;
+
+    .qr img {
+      max-width: 220px;
+      border-radius: 8px;
+    }
+
+    .note {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #ff4d4d;
+    }
+
+    .note-title {
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-bottom: 8px;
     }
   </style>
-
-  <script>
-    function mostrarQR() {
-      const qr = document.getElementById("qr");
-      qr.style.display = qr.style.display === "none" ? "block" : "none";
-    }
-  </script>
 </head>
 
 <body>
 
-  <div class="container">
-    <h1>Confirmación de Cita</h1>
+<div class="container">
 
-    <p>
-      Para confirmar tu cita es necesario realizar un <strong>pago de reserva</strong>.
-    </p>
-
-    <div class="price">
-      Reserva: USD $5.00
-    </div>
-
-    <p>
-      Este valor garantiza tu horario y será descontado del total del servicio el día de tu cita.
-    </p>
-
-    <p>
-      Esta medida se ha implementado debido al flujo constante de personas que no acuden a su cita agendada.
-    </p>
-
-    <div class="btn" onclick="mostrarQR()">
-      Pagar con Deuna
-    </div>
-
-    <div id="qr" class="qr-container">
-      <p>Escanea el código QR desde la app Deuna</p>
-      <img src="qr-deuna.png" alt="QR Deuna">
-    </div>
-
-    <a class="btn btn-whatsapp"
-       href="https://wa.me/593992390509?text=Hola,%20adjunto%20el%20comprobante%20de%20pago%20de%20la%20reserva%20de%20mi%20cita."
-       target="_blank">
-      Enviar comprobante por WhatsApp
-    </a>
-
-   <div class="note">
-  <div class="note-title">NOTA</div>
+  <h1>Confirmación de Cita</h1>
 
   <p>
-    El valor de la reserva no es reembolsable.
+    Para confirmar tu cita es necesario realizar el <strong>pago completo del servicio</strong>.
   </p>
 
-  <p>
-    Solo se aceptará devolución bajo justificación comprobada y notificada con anticipación.
-  </p>
-
-  <p>
-    El comprobante deberá ser adjuntado en un lapso de dos horas; caso contrario, la cita será cancelada.
-  </p>
-</div>
-
+  <div class="price">
+    Pago total del servicio
   </div>
+
+  <p>
+    Esta medida se ha implementado debido al flujo constante de personas que no acuden a su cita agendada.
+  </p>
+
+  <!-- OPCIÓN DEUNA -->
+  <a class="btn" href="https://pagar.deuna.app/H92p/U2FsdGVkX188jSxh+jvF8q72JSojG9JMBMgyi3rjeTGYpejfWOsV6yuP3ActreTqbFRfZkB8z4pjXD5hiSAGdMsyWMqNjBjfjUtSKJ266WYzAsSdSE27QIAlrOMMMS+Lm8/PbKaxYi2NwGrByX/u+rxsLoZvc90P1XBzYQs+VSCFHxIHydeIzP4GiCgC18WEyllc6EZGtAzqc9BtP6ACpg==" target="_blank">
+    Tengo Deuna – Pagar ahora
+  </a>
+
+  <a class="btn btn-secondary" href="#qr">
+    No tengo Deuna – Pagar con QR
+  </a>
+
+  <!-- QR -->
+  <div class="qr" id="qr">
+    <p>Escanea el código QR para realizar el pago:</p>
+    <img src="qr-deuna.png" alt="QR de pago Deuna">
+  </div>
+
+  <!-- NOTA LEGAL -->
+  <div class="note">
+    <div class="note-title">NOTA</div>
+
+    <p>
+      El valor del servicio no es reembolsable.
+    </p>
+
+    <p>
+      Solo se aceptará devolución bajo justificación comprobada y notificada con anticipación.
+    </p>
+
+    <p>
+      El comprobante deberá ser adjuntado en un lapso máximo de dos horas; caso contrario, la cita será cancelada.
+    </p>
+  </div>
+
+</div>
 
 </body>
 </html>
-
